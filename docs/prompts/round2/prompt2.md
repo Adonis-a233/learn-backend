@@ -8,7 +8,7 @@
 - 技术栈：【Java Spring Boot / Go + 框架名称】
 - 语言版本：【填写】
 - 框架版本：【填写】
-- 数据访问方式：【尚未确定 / JDBC / MyBatis / JPA / database/sql / sqlx / GORM / Ent】
+- 数据访问方式：【尚未确定 / JDBC / MyBatis / JPA / database/sql / sqlx / GORM】
 - 我的现有代码或目录结构：【可选；没有则写“暂无”】
 - 我目前最不理解的部分：【填写】
 

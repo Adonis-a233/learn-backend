@@ -7,7 +7,7 @@
 - 当前日期：【YYYY-MM-DD】
 - 编程语言：【Java / Go】
 - 语言版本：【例如 Java 21 / Go 1.24】
-- Web 框架及版本：【例如 Spring Boot 3.5.x / Gin 1.x】
+- Web 框架及版本：【例如 Spring Boot 3.5.x / Hertz v0.10.x 】
 - 数据库：【MySQL 具体版本；不知道则填写“待确定”】
 - 包管理或构建工具：【Maven / Gradle / Go Modules】
 - 当前水平：【填写已经掌握的内容】

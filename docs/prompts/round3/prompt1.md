@@ -10,7 +10,7 @@
 - 操作系统：【填写】
 - 技术路线：【Java / Go】
 - Java 技术栈：【Java、Spring Boot、数据访问框架及具体版本】
-- Go 技术栈：【】
+- Go 技术栈：【Web 框架、GORM及版本】
 - 数据库：【MySQL 具体版本；不知道则填写“待确定”】
 - 第二轮认证方案：【签名 Cookie / Session / Token；注明实现方式】
 - 已掌握内容：【填写】

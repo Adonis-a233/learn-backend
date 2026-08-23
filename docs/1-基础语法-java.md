@@ -1,55 +1,36 @@
-# learn-backend 第一轮考核
+# learn-backend 第一轮考核：Java 语言基础与赛事数据处理
 
-## 参考资料
+> 本轮目标不是刷完一套语法课，而是使用 Java 独立完成一个可运行、可测试、可说明设计取舍的命令行项目。固定数据、命令解析、文件读写、异常处理和自动化测试都是本轮必做的一部分。
 
-### 参考视频（建议刚接触编程语言的跟着视频走）
+## 开始前
 
--   [JavaSE 教程 已完结 (IDEA 2025 最新版) 4K 蓝光画质+杜比音效 零基础入门一套搞定 入门到入土 基于 Java25 讲解\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV163GGz2E8c/?vd_source=dff8e8da3e782503dba2b80a888e026c)
--   [黑马程序员 Java 零基础视频教程](https://www.bilibili.com/video/BV17F411T7Ao?vd_source=e7a1a430689d9d09f914db65fcdea382)
--   [动力节点](https://www.bilibili.com/video/BV1Rx411876f?share_source=copy_web&vd_source=7d2fd3963c594f890889ebd454ef8d1c)
--   Android Kotlin：
-    -   [Kotlin 基础视频+文章 by 扔物线](https://rengwuxian.com/kotlin-basic-1/)
-    -   [Kotlin 从入门到实战](https://www.bilibili.com/video/BV1bZ4y1N7my)
+- 推荐使用 **IntelliJ IDEA** 编写、运行和调试 Java；社区版或 Ultimate 均可，不要求付费版本。
+- 安装仍受支持的 LTS JDK。课程示例优先使用 **Java 21 或 Java 25**；在 README 中写明实际 JDK、构建工具和运行命令。
+- 使用 Maven 或 Gradle 管理依赖和测试；不要手工复制 jar 包到项目目录。
+- 环境安装、Java 入门课程、官方文档和书籍见 [Java 推荐资料](0-推荐资料-java.md)。开始前只需完成“能在 IDEA 中创建项目、运行 `main` 方法、执行一个测试”这三个检查点。
 
-### 基础参考教程
+## AI 学习方式
 
--   [廖雪峰 Java 入门教程 (liaoxuefeng.com)](https://www.liaoxuefeng.com/wiki/1252599548343744) **不建议跟着用 Eclipse，关于 IDE 的推荐具体看下面的提示**
--   [编程狮](https://www.w3cschool.cn/java/)
+本轮沿用第二至第六轮的“AI 辅助教学 + 官方文档核验”方式。AI 用于拆分知识、解释错误、设计小练习和评审思路；不能代替你完成考核项目，也不能作为版本或 API 行为的唯一依据。
 
-### 推荐书籍
+向 AI 提问时，先提供当前日期、操作系统、JDK 版本、IDEA 版本、构建工具、已掌握内容和当前卡住的现象。涉及 JDK API、依赖、构建配置或命令行行为时，要求它给出适用版本与官方来源，再自行核验。保留真正解决问题的提问、来源和自己的结论；不要提交 AI 直接生成且自己无法解释、修改或调试的代码。
 
--   《Head First Java》(图解多、讲的比较简单、内容不够全面，可以来读读提高兴趣)
--   《Java 核心技术卷 Ⅰ》
--   《Java 核心技术卷 Ⅱ》
--   《Thinking In Java》 (人称 Java 圣经(可能会有些难懂))
--   对 Android 方向，可以提前通过以下资料熟悉下 Kotlin：
-    -   [Java to Kotlin](https://github.com/MindorksOpenSource/from-java-to-kotlin)
-    -   [Kotlin 官方指南](https://www.kotlincn.net/docs/reference/basic-syntax.html)
-
-### 公开课
-
--   [Main | CS 61B Spring 2021](https://sp21.datastructur.es/index.html) (很推荐各位在大一的时候多去刷刷公开课，拿 61b 来说，61b 使用 java 语言教学数据结构，他的前几轮 disc 是对 java 的 intro，很适合初学者入门)
--   [CS 自学指南](https://csdiy.wiki/)
+- [提示词一：生成第一轮学习路线](prompts/round1/prompt1.md)
+- [提示词二：理解 Java 基础与面向对象](prompts/round1/prompt2.md)
+- [提示词三：文件、数据与命令解析](prompts/round1/prompt3.md)
+- [提示词四：测试、异常与项目结构](prompts/round1/prompt4.md)
+- [提示词五：排查第一轮具体问题](prompts/round1/prompt5.md)
 
 ## 知识点
 
--   配置编译环境
--   输入输出
--   选择结构、循环结构
--   方法
--   数组
-
--   封装、继承、抽象、多态、接口
--   异常处理
--   集合
--   泛型
-
--   文件读取
-
--   Bonus
-    -   java.uitl 以及 java.math 下的一些常用工具类 (如 Date / Math / Random / BigDemical / ArrayList 等等等等)
-    -   多线程 (JUC)
-    -   正则表达式
+- JDK、JRE、JVM 的职责；IDEA 项目、源代码、编译产物和运行配置的关系；
+- 变量、基本类型、字符串、表达式、分支、循环、方法、数组与 `List`、`Map`；
+- 类、对象、封装、继承、抽象、多态、接口，以及何时不需要为了“面向对象”额外抽象；
+- 异常的传播、转换和资源关闭；不要吞掉异常或只打印后继续产生错误结果；
+- UTF-8 文本、文件读写、路径和命令行参数；不得依赖开发机绝对路径；
+- `BigDecimal`、`java.time`、集合、排序、正则等常用标准库的适用边界；
+- Maven/Gradle、JUnit、断言、测试数据、Git 提交和 README；
+- 并发、正则和更深入的标准库属于 Bonus，先完成本轮必做功能与测试。
 
 ## 任务
 
@@ -70,7 +51,7 @@
 输入指令和输出文件以命令行参数传入。例如我们在命令行窗口(cmd)中输入：
 
 ```bash
-Java -jar DWASearch.jar input.txt output.txt
+java -jar DWASearch.jar input.txt output.txt
 ```
 
 #### 1.1 输出所有选手信息

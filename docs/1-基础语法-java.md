@@ -1,6 +1,6 @@
 # learn-backend 第一轮考核：Java 语言基础与赛事数据处理
 
-> 本轮目标不是刷完一套语法课，而是使用 Java 独立完成一个可运行、可测试、可说明设计取舍的命令行项目。固定数据、命令解析、文件读写、异常处理和自动化测试都是本轮必做的一部分。
+> 本轮目标不是刷完一套语法课，而是使用 Java 独立完成一个可运行、可测试、可说明设计取舍的命令行项目。固定数据、命令解析、文件读写、异常处理和自动化测试都是本轮必做的一部分；网页采集、详细赛程和性能优化属于完成基础功能后的 Bonus。
 
 ## 开始前
 
@@ -34,16 +34,16 @@
 
 ## 任务
 
-完成对**世界游泳锦标赛跳水项目**相关数据的收集，并实现一个能够对赛事数据进行统计的控制台程序，项目包括基本功能的实现、单元测试、性能分析与改进，以及README.md撰写。
+使用题目提供的**世界游泳锦标赛跳水项目固定数据包**，实现一个能够查询赛事数据的控制台程序。项目包括基本功能、单元测试和 README 撰写。
+
+### 提交方式
+
+学习者须自行创建一个**公开 GitHub 仓库**，将本轮完整项目提交并推送到该仓库。仓库必须包含源码、固定数据或其合规获取方式、依赖配置、README、自动化测试和 `.gitignore`；不得只提交 jar、截图或运行结果，也不得提交密钥、个人敏感信息、IDE 缓存或编译产物。
 
 ### 需求
 
 实现一个命令行程序，不妨称之为**DWASearch**。
-本次作业所需数据均爬取自**世界游泳锦标赛官网的跳水项目**[比赛结果](https://www.worldaquatics.com/competitions/3337/66th-international-divers-day-rostock/results?event=108c795d-5e4f-4dc6-acea-0bc70bfd1928)和[参赛选手信息](https://www.worldaquatics.com/competitions/3337/66th-international-divers-day-rostock/athletes?gender=&countryId=)【该爬取行为仅用于课程教学】 
-
-数据收集部分可以参考往届优秀作业[[参考链接\]](https://blog.csdn.net/CowBoyHS/article/details/129327279?csdn_share_tail={"type"%3A"blog"%2C"rType"%3A"article"%2C"rId"%3A"129327279"%2C"source"%3A"CowBoyHS"})
-
-> 如需http请求工具或者Json解析工具，可以使用**Maven**方式导入
+题目会提供选手和比赛结果的固定数据文件。程序在运行和测试时只能读取这份固定数据；不得依赖赛事官网或其他网络服务，也不得修改原始数据文件。可以使用 Maven 导入 JSON 解析库，但不需要使用 HTTP 请求工具或编写爬虫。
 
 ### 1. 基本功能
 
@@ -66,7 +66,7 @@ players
 
 1. 其中`Full Name`对应选手全名，`Gender`为选手性别, `Country`为国籍。
 2. 换行使用'\n'，编码统一使用UTF-8。
-3. 顺序以国籍为首要关键字升序、选手的名(Last Name)为次要关键字升序排序(若爬取的数据已经排序完成则仅需要依次提取需要的信息，不必编写排序过程的代码)。
+3. 顺序以国籍为首要关键字升序、选手的名(Last Name)为次要关键字升序排序；若固定数据已按此顺序提供，可直接按数据顺序输出，并在 README 中说明。
 4. 每输出一个选手的相关信息后，以5个“-”单独成行作为分割线，最后一个选手信息输出后仍要输出一行分割线。
 5. 输出的内容中除选手名称和选手国籍可能存在空格，其他信息不得增加多于的空格或者其他符号。
 
@@ -156,64 +156,7 @@ Score:42.00 + 18.20 + 35.70 + 34.50 + 32.55 = 162.95
 
 ---
 
-#### 1.3 输出详细结果
-
-当input.txt的内容为
-
-```
-result women 10m platform detail
-```
-
-则会输出世界游泳锦标赛跳水项目**女子10m跳台**的所有比赛结果到**output.txt**，输出格式如下:
-
-1. `Full Name`对应选手姓名。
-2. `Rank`为排名。格式如`'1 | 2 | 3'`表示初赛排名为1，半决赛排名为2，决赛排名为3。部分比赛若无半决赛或初赛又或者选手未参加半决赛或决赛的则用`'*'`占位表示，如`'* | * | 1'`。
-3. `Preliminary Score`表示初赛中该选手的成绩。格式如`'score1 + score2 + score3 + ··· + score7 = totalPoint'`。若无初赛则用`'*'`表示。
-4. `Semifinal Score`表示半决赛中该选手的成绩。格式如`'score1 + score2 + score3 + ··· + score7 = totalPoint'`。若无半决赛或者选手未参加则用`'*'`表示。
-5. `Final Score`表示决赛中该选手的成绩。格式如`'score1 + score2 + score3 + ··· + score7 = totalPoint'`。若选手未参加则用`'*'`表示。
-6. 输出顺序按照选手**第一次比赛的排名顺序**输出。
-7. 注意空格出现的位置，不能有多于的空格，否则会被判定为格式错误。
-8. **[补充]** 如果遇到**双人项目**，选手姓名格式命名为`'A & B'`按照选手名（Last Name）从小到大排序，例如`'JACHIM Filip & LUKASZEWICZ Robert'`
-
-输出格式：
-
-```javascript
-Full Name:string
-Rank:string
-Preliminary Score:string
-Semifinal Score:string
-Final Score:string
------
-...
------
-Full Name:string
-Rank:string
-Preliminary Score:string
-Semifinal Score:string
-Final Score:string
------
-```
-
-输出样例：
-
-```javascript
-Full Name:FUNG Katelyn
-Rank:1 | 4 | 2
-Preliminary Score:60.20 + 56.00 + 57.60 + 54.00 + 70.40 = 298.20
-Semifinal Score:46.20 + 30.80 + 68.80 + 61.50 + 67.20 = 274.50
-Final Score:58.80 + 54.60 + 57.60 + 54.00 + 72.00 = 297.00
------
-...
------
-Full Name:SANTIAGO Dominique
-Rank:14 | 11 | 11
-Preliminary Score:39.20 + 21.00 + 41.85 + 31.20 + 13.05 = 146.30
-Semifinal Score:42.00 + 22.50 + 17.55 + 42.90 + 39.15 = 164.10
-Final Score:42.00 + 28.50 + 20.25 + 41.60 + 44.95 = 177.30
------
-```
-
-#### 1.4 处理多条命令
+#### 1.3 多条命令
 
 对于**input.txt**，可能包含多行命令。程序应按顺序逐行处理，输出结果连续写入输出文件，不在两条命令之间额外插入空行，空行的处理规则必须写入 README，并在整个程序中保持一致。
 
@@ -279,7 +222,7 @@ Country:Uzbekistan
 
 **指令区分大小写**，指令中**所有的英文字母都采用小写的形式**。
 
-#### 1.5 处理非法输入
+#### 1.4 处理非法输入
 
 假如输入无法处理的指令，例如：
 
@@ -300,7 +243,7 @@ Country:Uzbekistan
    men 10m synchronised
    ```
 
-3. 在比赛项目名称后只能加上'detail'字符，如果字符不正确，则输出`N/A`。
+3. `result` 命令只能包含项目名称；在项目名称后添加任何额外字符，均输出`N/A`。
 
 input.txt样例：
 
@@ -394,7 +337,7 @@ public class CoreModule {
 - 命令行测试程序使用
 - 在单元测试框架下使用
 
-### 3. 单元测试和性能分析
+### 3. 单元测试
 
 测试不能只覆盖一条成功命令。至少应覆盖以下类别：
 
@@ -419,7 +362,6 @@ round-1/
  ├─DWASearch.java		 # 主程序，可以从命令行接收参数；确保文件名一致、区分大小写
  ├─Lib.java			     # 包含其它自定义函数，可以有多个，对名字不做要求
  ├─data 				 # 文件夹，存放程序的数据
-├─DWASearch.jar
 ├─tests/                 # 自动化测试
 ├─README.md				 # 描述你的项目，包括如何运行、功能简介、作业链接等	
 ├─.gitignore
@@ -427,16 +369,15 @@ round-1/
 ```
 
 1. 在src目录下必须有名为`DWASearch.java`文件，且DWASearch.java中包含 `public static void main(String[] args) `方法
-2. 请将Java代码打包成jar
+2. 请在本地将 Java 代码打包成 jar，并在 README 中写明打包命令和验证结果；不要将构建产物提交到 Git 仓库。
 
 **注意：**
 
 README.md 需要包括一下内容：
 
 1. 记录**模块接口的设计与实现过程**。设计包括代码如何组织，比如会有几个类，几个函数，他们之间关系如何，关键函数是否需要画出流程图？说明你的算法的关键（不必列出源代码），以及独到之处。
-2. 计算模块接口部分的**性能改进**。
-3. 计算模块部分**单元测试展示**。
-4. 计算模块部分**异常处理说明**。
+2. 计算模块部分**单元测试展示**。
+3. 计算模块部分**异常处理说明**。
 
 ### 提示
 

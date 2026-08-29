@@ -34,20 +34,20 @@
 
 ## 任务
 
-使用题目提供的**世界游泳锦标赛跳水项目固定数据包**，实现一个能够查询赛事数据的控制台程序。项目包括基本功能、单元测试和 README 撰写。
+使用题目提供的 **2026 World Aquatics Diving World Cup Super Final（北京）固定数据包**，实现一个能够查询赛事数据的控制台程序。项目包括基本功能、单元测试和 README 撰写。
 
 ### 提交方式
 
-学习者须自行创建一个**公开 GitHub 仓库**，将本轮完整项目提交并推送到该仓库。仓库必须包含源码、固定数据或其合规获取方式、依赖配置、README、自动化测试和 `.gitignore`；不得只提交 jar、截图或运行结果，也不得提交密钥、个人敏感信息、IDE 缓存或编译产物。
+学习者须自行创建一个**公开 GitHub 仓库**，将本轮完整项目提交并推送到该仓库。仓库必须包含源码、固定数据、依赖配置、README、自动化测试和 `.gitignore`；不得只提交 jar、截图或运行结果，也不得提交密钥、个人敏感信息、IDE 缓存或编译产物。
 
 ### 需求
 
 实现一个命令行程序，不妨称之为**DWASearch**。
-题目会提供选手和比赛结果的固定数据文件。程序在运行和测试时只能读取这份固定数据；不得依赖赛事官网或其他网络服务，也不得修改原始数据文件。可以使用 Maven 导入 JSON 解析库，但不需要使用 HTTP 请求工具或编写爬虫。
+题目固定数据包位于仓库的 [`data/round-1-diving-2026/`](../data/round-1-diving-2026/)：其中 `data.json` 提供选手和比赛结果，`manifest.json` 记录来源、抓取时间、数据版本与 SHA-256。学习者应将该数据包复制到自己的公开项目仓库，并在 README 写明实际目录和所用数据版本。程序在运行和测试时只能读取本地固定数据；不得依赖赛事官网或其他网络服务，也不得修改原始数据文件。数据格式和维护者更新方式见 [数据包说明](../data/round-1-diving-2026/README.md)。
 
 ### 1. 基本功能
 
-假设有一个软件可以输出2024世界游泳锦标赛跳水项目的选手信息和比赛结果。
+假设有一个软件可以输出 2026 World Aquatics Diving World Cup Super Final（北京）的选手信息和比赛结果。
 输入指令和输出文件以命令行参数传入。例如我们在命令行窗口(cmd)中输入：
 
 ```bash
@@ -62,7 +62,7 @@ java -jar DWASearch.jar input.txt output.txt
 players
 ```
 
-则会输出**参与世界游泳锦标赛跳水项目的所有选手信息**到**output.txt**，输出格式如下：
+则会输出**参与该跳水赛事的所有选手信息**到**output.txt**，输出格式如下：
 
 1. 其中`Full Name`对应选手全名，`Gender`为选手性别, `Country`为国籍。
 2. 换行使用'\n'，编码统一使用UTF-8。
@@ -88,19 +88,19 @@ Country:string
 输出样例：
 
 ```javascript
-Full Name:HART Alexander
-Gender:Male
-Country:Austria
+Full Name:COLE Ellie
+Gender:Female
+Country:Australia
 -----
-Full Name:LOTFI Dariush
-Gender:Male
-Country:Austria
+Full Name:KEENEY Maddison
+Gender:Female
+Country:Australia
 -----
 ...
 -----
-Full Name:DICK Elaena
+Full Name:VERZYL Sophia
 Gender:Female
-Country:Canada
+Country:United States of America
 -----
 ```
 
@@ -111,10 +111,10 @@ Country:Canada
 当input.txt的内容为
 
 ```javascript
-result women 1m springboard
+result women 3m springboard
 ```
 
-则会输出**女子1m跳板**的决赛结果到**output.txt**，输出格式如下:
+则会输出**女子3m跳板**的决赛结果到**output.txt**，输出格式如下:
 
 1. `Full Name`对应选手姓名。
 2. `Rank`为排名。格式如`'1'`。
@@ -138,19 +138,19 @@ Score:string
 输出样例：
 
 ```javascript
-Full Name:MULLER Jette
+Full Name:CHEN Jia
 Rank:1
-Score:51.60 + 52.00 + 51.75 + 46.80 + 46.80 = 248.95
+Score:73.50 + 74.40 + 76.50 + 72.00 + 78.00 = 374.40
 -----
-Full Name:ROLLINSON Amy
+Full Name:CHEN Yiwen
 Rank:2
-Score:46.00 + 42.90 + 50.70 + 54.00 + 46.80 = 240.40
+Score:69.00 + 72.00 + 76.50 + 79.05 + 76.50 = 373.05
 -----
 ...
 -----
-Full Name:SANTIAGO Dominique
-Rank:12
-Score:42.00 + 18.20 + 35.70 + 34.50 + 32.55 = 162.95
+Full Name:KOLOI Alysha
+Rank:4
+Score:67.50 + 65.10 + 40.50 + 58.50 + 63.00 = 294.60
 -----
 ```
 
@@ -164,57 +164,57 @@ Score:42.00 + 18.20 + 35.70 + 34.50 + 32.55 = 162.95
 
 ```javascript
 players
-result women 1m springboard
-result women 1m springboard
+result women 3m springboard
+result women 3m springboard
 players
 ```
 
 此时的输出文件**output.txt**中的内容为：
 
 ```javascript
-Full Name:HART Alexander
-Gender:Male
-Country:Austria 
+Full Name:COLE Ellie
+Gender:Female
+Country:Australia
 -----
-Full Name:LOTFI Dariush
-Gender:Male
-Country:Austria
+Full Name:KEENEY Maddison
+Gender:Female
+Country:Australia
 -----
 ...
 -----
-Full Name:MULLER Jette
+Full Name:CHEN Jia
 Rank:1
-Score:51.60 + 52.00 + 51.75 + 46.80 + 46.80 = 248.95
+Score:73.50 + 74.40 + 76.50 + 72.00 + 78.00 = 374.40
 -----
-Full Name:ROLLINSON Amy
+Full Name:CHEN Yiwen
 Rank:2
-Score:46.00 + 42.90 + 50.70 + 54.00 + 46.80 = 240.40
+Score:69.00 + 72.00 + 76.50 + 79.05 + 76.50 = 373.05
 -----
 ...
 -----
-Full Name:MULLER Jette
+Full Name:CHEN Jia
 Rank:1
-Score:51.60 + 52.00 + 51.75 + 46.80 + 46.80 = 248.95
+Score:73.50 + 74.40 + 76.50 + 72.00 + 78.00 = 374.40
 -----
-Full Name:ROLLINSON Amy
+Full Name:CHEN Yiwen
 Rank:2
-Score:46.00 + 42.90 + 50.70 + 54.00 + 46.80 = 240.40
+Score:69.00 + 72.00 + 76.50 + 79.05 + 76.50 = 373.05
 -----
 ...
 -----
-Full Name:HART Alexander
-Gender:Male
-Country:Austria 
+Full Name:COLE Ellie
+Gender:Female
+Country:Australia
 -----
-Full Name:LOTFI Dariush
-Gender:Male
-Country:Austria
+Full Name:KEENEY Maddison
+Gender:Female
+Country:Australia
 -----
 ...
 -----
-Full Name:MYALIN Igor
-Gender:Male
-Country:Uzbekistan
+Full Name:VERZYL Sophia
+Gender:Female
+Country:United States of America
 -----
 ```
 
@@ -231,12 +231,10 @@ Country:Uzbekistan
 2. result后的比赛项目名称应为如下这些名称之一，如果不正确，则输出`N/A`
 
    ```js
-   women 1m springboard
    women 3m springboard
    women 10m platform
    women 3m synchronised
    women 10m synchronised
-   men 1m springboard
    men 3m springboard
    men 10m platform
    men 3m synchronised
@@ -250,11 +248,11 @@ input.txt样例：
 ```javascript
 player
 Players
-resultwomen 1m springboard
+resultwomen 3m springboard
 result women 10m springboard
 result sss
 result detail
-result women 1m springboard details
+result women 3m springboard details
 result men 10m     synchronised
 players
 ```
@@ -278,19 +276,19 @@ N/A
 -----
 N/A
 -----
-Full Name:HART Alexander
-Gender:Male
-Country:Austria 
+Full Name:COLE Ellie
+Gender:Female
+Country:Australia
 -----
-Full Name:LOTFI Dariush
-Gender:Male
-Country:Austria
+Full Name:KEENEY Maddison
+Gender:Female
+Country:Australia
 -----
 ...
 -----
-Full Name:MYALIN Igor
-Gender:Male
-Country:Uzbekistan
+Full Name:VERZYL Sophia
+Gender:Female
+Country:United States of America
 -----
 ```
 
@@ -418,7 +416,7 @@ README.md 需要包括一下内容：
 完成全部必做内容后，可以选择以下方向：
 
 - 实现 `result <event> detail`，输出预赛、半决赛和决赛的排名与成绩；
-- 从公开赛事页面或接口更新数据，并把采集器与查询核心隔离；
+- 支持混合团体项目 `mixed 3m & 10m team`，并把采集器与查询核心隔离；
 - 支持 CSV、JSON 等多种数据源；
 - 基于实际测量定位一个性能问题，记录输入规模、测量方法和优化前后结果；
 - 提供表格化终端输出或其他展示方式，同时保留规定的文件输出格式。

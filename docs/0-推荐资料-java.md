@@ -4,7 +4,7 @@
 
 ## Git 与 GitHub
 
-Git 是第一轮的基础工具：请用它保存每次有意义的代码修改、查看差异并在出现问题时定位变更。第一轮是否要求把代码公开上传到 GitHub，按当届考核通知执行；即使暂时只在本地或私有仓库保存，也应完成本地 `init`、`status`、`add`、`commit`、`log`、`diff` 和分支的基本练习。不要把密钥、个人数据、IDE 缓存或编译产物提交到仓库。
+Git 是第一轮的基础工具：请为本轮项目自行创建一个公开 GitHub 仓库，将完整项目推送到该仓库，并在 README 中提供仓库链接。请用 Git 保存每次有意义的代码修改、查看差异并在出现问题时定位变更；至少完成本地 `init`、`status`、`add`、`commit`、`log`、`diff` 和分支的基本练习。不要把密钥、个人数据、IDE 缓存或编译产物提交到仓库。
 
 - [Git 与 GitHub 的超容易入门](https://west2-online.feishu.cn/wiki/Lsz9w3CiGinXzgkevtmceHZknrf)：优先阅读，学习本地仓库、提交、远程仓库和 Pull Request 的基本流程。
 - [Pro Git 中文版](https://git-scm.com/book/zh/v2)：Git 官方书籍，遇到分支、远程、合并或回退概念不清楚时查阅。

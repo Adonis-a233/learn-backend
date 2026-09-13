@@ -1,10 +1,10 @@
 # Java 推荐资料
 
-> 优先使用官方资料核验版本和 API 行为；视频课程仅作为入门讲解的补充。链接在 2026-08 核验，课程页面会持续变化，使用前请确认其示例 JDK 与你的项目版本相同。
+> 优先使用最新正式版，关键适配明显不足时再调整，具体原则与当前版本入口见[第 0 轮](0-开始之前.md)。视频课程仅作为入门讲解的补充；教程版本与项目不同时，以当前官方文档为准。
 
 ## Git 与 GitHub
 
-Git 是第一轮的基础工具：请为本轮项目自行创建一个公开 GitHub 仓库，将完整项目推送到该仓库，并在 README 中提供仓库链接。请用 Git 保存每次有意义的代码修改、查看差异并在出现问题时定位变更；至少完成本地 `init`、`status`、`add`、`commit`、`log`、`diff` 和分支的基本练习。不要把密钥、个人数据、IDE 缓存或编译产物提交到仓库。
+Git 是第一轮的基础工具：第一轮由负责人在本仓库的 [`work1/`](../work1/README.md) 统一收录，第二轮起自行创建独立的个人项目仓库。请用 Git 保存每次有意义的代码修改、查看差异并在出现问题时定位变更；至少完成本地 `init`、`status`、`add`、`commit`、`log`、`diff` 和分支的基本练习。不要把密钥、个人数据、IDE 缓存或编译产物提交到仓库。
 
 - [Git 与 GitHub 的超容易入门](https://west2-online.feishu.cn/wiki/Lsz9w3CiGinXzgkevtmceHZknrf)：优先阅读，学习本地仓库、提交、远程仓库和 Pull Request 的基本流程。
 - [Pro Git 中文版](https://git-scm.com/book/zh/v2)：Git 官方书籍，遇到分支、远程、合并或回退概念不清楚时查阅。
@@ -21,15 +21,15 @@ Git 是第一轮的基础工具：请为本轮项目自行创建一个公开 Git
 
 ## Java 与构建工具官方文档
 
-- [Java SE 25 API 文档](https://docs.oracle.com/en/java/javase/25/docs/api/index.html)：查标准库时以此为准；使用其他 JDK 时切换到相应版本。
-- [Java 25 安装指南](https://docs.oracle.com/en/java/javase/25/install/installation-guide.pdf)：JDK 安装与平台差异。
+- [Java SE 26 API 文档](https://docs.oracle.com/en/java/javase/26/docs/api/index.html)：查标准库时以此为准；使用其他 JDK 时切换到相应版本。
+- [Java 下载与版本入口](https://www.oracle.com/java/technologies/downloads/)：安装前核对当前正式版与平台支持。
 - [Maven in 5 Minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)：本轮使用 Maven 时的官方入门。
 - [Gradle Java Plugin](https://docs.gradle.org/current/userguide/java_plugin.html)：本轮使用 Gradle 时的官方入门。
-- [JUnit 5 User Guide](https://docs.junit.org/current/user-guide/)：测试、断言和测试生命周期。
+- [JUnit User Guide](https://docs.junit.org/current/user-guide/)：当前文档为 JUnit 6 系列，包含测试、断言和测试生命周期；与所用框架版本配套。
 
 ## 后续轮次按需查阅
 
-- [Spring Boot Reference Documentation](https://docs.spring.io/spring-boot/documentation.html)
+- [Spring Boot Reference Documentation](https://docs.spring.io/spring-boot/documentation.html)：优先使用 Spring Boot 4.x 最新正式版，依赖按对应版本适配。
 - [Spring Cloud](https://spring.io/projects/spring-cloud)
 - [MySQL Reference Manual](https://dev.mysql.com/doc/)
 - [Docker Docs](https://docs.docker.com/)

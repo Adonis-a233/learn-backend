@@ -88,7 +88,6 @@ collection-java/work2/            # 第一轮 Java，个人目录按该仓库说
 ├─docs/                         # 考核文档与参考资料
 ├─etc/                          # 通用规范、答辩说明和补充资料
 │  └─blog/                      # 优质文章或学习笔记
-├─img/                          # 文档图片与架构图
 ├─LICENSE
 └─README.md
 ```

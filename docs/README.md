@@ -12,9 +12,9 @@
 | [Go 推荐资料](0-推荐资料-go.md) | Go 与后端开发参考资料 | Go 路线学习入口 |
 | [架构阅读](架构阅读.md) | AI 探索示例、交易建模、重试、容量评估与开源实现 | 第三、第四轮按需阅读 |
 | 第一轮：语言起步 [Java](1-基础语法-java.md) \| [Go](1-基础语法-go.md) | 基础语法、HTTP 抓取与 JSON、打包 jar、文件处理、测试与异常处理 | 自己抓取赛事数据并实现查询命令行程序；Java 提交到 collection-java/work2 |
-| [第二轮（电商第一轮）：数据库、TodoList 与网页登录](2-电商基础.md) | MySQL、TodoList、网页登录鉴权与 Docker | 可通过 Docker 运行的 TodoList |
+| [第二轮（电商第一轮）：数据库、TodoList 与网页登录](2-后端基础.md) | MySQL、TodoList、网页登录鉴权与 Docker | 可通过 Docker 运行的 TodoList |
 | [第三轮：电商业务与下单闭环](3-交易闭环.md) | 地址、类目、商品、SKU、购物车和订单 | 从商品浏览到下单与取消 |
-| [第四轮：完整电商与场景深入](4-完整电商与工程实践.md) | 六个业务域、自选场景、异步、重试、并发与压测 | 完整基础商城、一个深入专项及可复现的工程实践记录 |
+| [第四轮：完整电商与场景深入](4-工程实践.md) | 六个业务域、自选场景、异步、重试、并发与压测 | 完整基础商城、一个深入专项及可复现的工程实践记录 |
 
 [后续拓展方向](后续拓展.md)暂留空，不作为当前必做内容。
 
@@ -26,9 +26,9 @@ docs/
 ├─0-推荐资料-go.md
 ├─1-基础语法-java.md
 ├─1-基础语法-go.md
-├─2-电商基础.md
+├─2-后端基础.md
 ├─3-交易闭环.md
-├─4-完整电商与工程实践.md
+├─4-工程实践.md
 ├─架构阅读.md
 ├─后续拓展.md
 ├─prompts/
@@ -79,7 +79,7 @@ docs/
 
 ## 提交通则
 
-第一轮 Java 作业提交到 [west2-online-reserve/collection-java](https://github.com/west2-online-reserve/collection-java) 的 [`work2/`](https://github.com/west2-online-reserve/collection-java/tree/main/work2) 目录，具体方式按该仓库说明和当届通知执行。采用其他语言（如 Go）的第一轮作业由负责人在本仓库根目录 [`work1/`](../work1/README.md) 统一收录，个人目录使用 GitHub ID 命名。
+第一轮 Java 作业提交到 [west2-online-reserve/collection-java](https://github.com/west2-online-reserve/collection-java) 的 [`work2/`](https://github.com/west2-online-reserve/collection-java/tree/main/work2) 目录，具体方式按该仓库说明和当届通知执行。
 
 第二轮起，学生须自行创建独立的个人公开项目仓库，将链接提交到负责人指定入口。第二至第四轮在这个电商仓库持续迭代，每轮创建可追溯的 Git 标签或 Release；后续新项目同样由学生创建对应的个人仓库。
 

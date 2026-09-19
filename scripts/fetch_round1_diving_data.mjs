@@ -1,9 +1,11 @@
 /**
- * Fetch and normalize the fixed data package used by the Java round-one task.
+ * Maintainer-only baseline for the Java round-one task.
  *
- * The generated snapshot is committed. Learners use the local files only;
- * this script is for maintainers refreshing the snapshot after reviewing the
- * source site's terms and verifying that the returned data shape is unchanged.
+ * The task no longer ships a data package: learners crawl the event data
+ * themselves. This script keeps a maintainer-side reference snapshot for
+ * spot-checking submissions, and must only be run after reviewing the source
+ * site's terms and verifying that the returned data shape is unchanged.
+ * It is not part of the learner task and is not linked from the task docs.
  */
 
 import { createHash } from 'node:crypto';

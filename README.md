@@ -2,8 +2,7 @@
 
 这里是西二在线工作室后端方向（learn-backend）的考核指南，旨在为初学者提供一条循序渐进、语言无关的后端学习路线。
 
-本考核不限定 Java、Go 等具体语言，各轮技术栈都是推荐路线。默认选择最新正式版，并核对框架兼容范围；当前第一轮使用 JDK 17+，Spring Boot 3 路线.
-
+本考核不限定 Java、Go 等具体语言，各轮技术栈都是推荐路线，版本以[第 0 轮](docs/0-开始之前.md#技术版本)核验结果为准：本考核统一使用 JDK 17+（上限 25）和 Spring Boot 3.5.x。
 
 ## 版权
 
@@ -24,11 +23,11 @@
 
 专项可以选择限量发售、支付、热门商品详情、搜索或推荐、履约、定价等方向。项目中的架构问题可以结合[架构阅读](docs/架构阅读.md)中的 AI 探索示例、文章和开源实现讨论，用自己的实现与实验验证方案。
 
-前三轮暂时各安排 6 周，共 18 周。这个安排要求学习者每周保持稳定投入，并由负责人根据基础和完成情况适当调整；零基础学习者如果未完成核心功能，应优先补齐当前轮次，不要为了赶时间直接进入下一轮。
+前三轮暂时安排 4、6、4 周，共 14 周。这个安排要求学习者每周保持稳定投入，并由负责人根据基础和完成情况适当调整；零基础学习者如果未完成核心功能，应优先补齐当前轮次，不要为了赶时间直接进入下一轮。
 
 ## 作业提交
 
-第一轮 Java 作业提交到 [west2-online-reserve/collection-java](https://github.com/west2-online-reserve/collection-java) 的 [`work2/`](https://github.com/west2-online-reserve/collection-java/tree/main/work2) 目录，具体方式按该仓库说明和当届通知执行。
+第一轮 Java 作业提交到 [west2-online-reserve/collection-java](https://github.com/west2-online-reserve/collection-java) 的 [`work2/`](https://github.com/west2-online-reserve/collection-java/tree/main/work2) 目录，具体方式按该仓库说明和当届通知执行。采用其他语言（如 Go）的同学，第一轮提交入口以当届通知为准。
 
 从第二轮开始，学生须自行创建**独立的个人公开项目仓库**，将仓库链接提交到负责人指定入口。第三、第四轮继续在这个电商仓库中迭代，各轮保留 Git 标签或 Release。后续另做新项目，也自行创建对应的个人仓库，不把项目源码收录到本指南仓库。
 

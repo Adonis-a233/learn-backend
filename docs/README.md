@@ -8,7 +8,7 @@
 
 | 文档 | 项目内容 | 主要交付 |
 | --- | --- | --- |
-| [第 0 轮：开始之前](0-开始之前.md) | 学习方式、Git 练习、AI 工具与 token 准备、技术版本和提交位置 | 开工前阅读，无独立作业 |
+| [第 0 轮：开始之前](0-开始之前.md) | 学习方式、Git 练习、技术版本和提交位置 | 开工前阅读，无独立作业 |
 | [Go 推荐资料](0-推荐资料-go.md) | Go 与后端开发参考资料 | Go 路线学习入口 |
 | [架构阅读](架构阅读.md) | AI 探索示例、交易建模、重试、容量评估与开源实现 | 第三、第四轮按需阅读 |
 | 第一轮：语言起步 [Java](1-基础语法-java.md) \| [Go](1-基础语法-go.md) | 基础语法、HTTP 抓取与 JSON、打包 jar、文件处理、测试与异常处理 | 自己抓取赛事数据并实现查询命令行程序；Java 提交到 collection-java/work2 |
@@ -65,7 +65,7 @@ docs/
 ### 技术选择
 
 - 技术栈是推荐，不硬性限定语言和框架；优先选择当前最新正式版，只有关键适配明显不足时再调整版本，不以旧版“更稳”为默认理由；
-- 第一轮纯 Java 项目使用 JDK 27；当前 Spring Boot 4.1.1 路线使用其官方支持的 JDK 26。具体兼容范围按[第 0 轮](0-开始之前.md#技术版本)核验；
+- 第一至第四轮统一使用 JDK 17+（上限 25）和 Spring Boot 3.5.x。具体兼容范围按[第 0 轮](0-开始之前.md#技术版本)核验；
 - 数据库、缓存、消息队列、搜索引擎或 Agent 必须对应明确问题，不按组件数量评分；
 - 金额、库存、权限和状态流转等规则必须由确定性后端代码校验，不能交给客户端、提示词或人工约定。
 
@@ -79,13 +79,12 @@ docs/
 
 ## 提交通则
 
-第一轮 Java 作业提交到 [west2-online-reserve/collection-java](https://github.com/west2-online-reserve/collection-java) 的 [`work2/`](https://github.com/west2-online-reserve/collection-java/tree/main/work2) 目录，具体方式按该仓库说明和当届通知执行。
+第一轮 Java 作业提交到 [west2-online-reserve/collection-java](https://github.com/west2-online-reserve/collection-java) 的 [`work2/`](https://github.com/west2-online-reserve/collection-java/tree/main/work2) 目录，具体方式按该仓库说明和当届通知执行。采用其他语言（如 Go）的同学，第一轮提交入口以当届通知为准。
 
 第二轮起，学生须自行创建独立的个人公开项目仓库，将链接提交到负责人指定入口。第二至第四轮在这个电商仓库持续迭代，每轮创建可追溯的 Git 标签或 Release；后续新项目同样由学生创建对应的个人仓库。
 
 ```text
 collection-java/work2/            # 第一轮 Java
-本指南仓库/work1/<GitHub ID>/      # 第一轮其他语言
 个人账号下的商城项目仓库/           # 第二至第四轮
 ```
 

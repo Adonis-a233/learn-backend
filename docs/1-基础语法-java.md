@@ -42,7 +42,7 @@
 - [MDN：HTTP 概述](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview)：请求、响应、方法和状态码；
 - [JSON 介绍（中文）](https://www.json.org/json-zh.html)：JSON 的语法和类型；
 - [Jackson 文档](https://github.com/FasterXML/jackson-docs)：常用的 JSON 解析库，也可以选 Gson；
-- [Java HttpClient](https://docs.oracle.com/en/java/javase/27/docs/api/java.net.http/java/net/http/HttpClient.html)：JDK 自带的 HTTP 客户端；
+- [Java HttpClient](https://docs.oracle.com/en/java/javase/17/docs/api/java.net.http/java/net/http/HttpClient.html)：JDK 自带的 HTTP 客户端，使用其他 JDK 时切换到对应版本；
 - [Maven JAR Plugin](https://maven.apache.org/plugins/maven-jar-plugin/)：打包 jar 与配置 `Main-Class`。
 
 ## 项目：DWASearch
